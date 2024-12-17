@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <title>SOCKET</title>
+  <link href="../stile/style.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../favicon/pc.png">
+</head>
+
+<body>
+  <h1 class="text-center my-5 pt-3">
+    SOCKET
+  </h1>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index/index.html">HOME</a>
+      <div class="d-flex">
+        <a class="navbar-brand me-2" href="../informatica/informatica.html">INFORMATICA</a>
+        <a class="navbar-brand me-2" href="../sistemi/sistemi.html">SISTEMI</a>
+        <a class="navbar-brand me-2" href="../socket/socket.html">SOCKET</a>
+        <a class="navbar-brand me-2" href="../glossario/glossario.html">GLOSSARIO</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-4">
+        <div id="list-example" class="list-group sticky-top">
+          <a class="list-group-item list-group-item-action" href="#list-item-1">Che cosa sono?</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-2">Tipologie di socket?</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-3">Come funzionano?</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-4">Esempio di utilizzo</a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example"
+          tabindex="0">
+          <h4 id="list-item-1">Che cosa sono?</h4>
+          <p class="border-bottom border-5 border-primary">Una socket è un endpoint di comunicazione utilizzato
+            per inviare e ricevere dati attraverso una rete. Fornisce un'interfaccia standard per comunicare
+            tra dispositivi remoti.</p>
+          <h4 id="list-item-2">Tipologie di socket?</h4>
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Stream (SOCK_STREAM)
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Utilizzato per la comunicazione orientata alla connessione, come TCP.
+                  Garantisce affidabilità e ordinamento dei dati.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Datagram (SOCK_DGRAM)
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Utilizzato per la comunicazione senza connessione, come UDP. Non garantisce
+                  affidabilità o ordine, ma offre velocità.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Raw (SOCK_RAW):
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Permette l'accesso diretto ai pacchetti di rete, utile per applicazioni di
+                  basso livello come strumenti di diagnostica.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                  Sequenced Packet (SOCK_SEQPACKET):
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Combina le caratteristiche di stream e datagram, garantendo sequenza e
+                  integrità dei pacchetti, ma senza la connessione TCP.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </p>
+        <h4 id="list-item-3">Come funzionano?</h4>
+        <p class="border-bottom border-5 border-primary">Una socket è un'interfaccia software che consente la
+          comunicazione tra due processi, sia sullo stesso dispositivo che su dispositivi diversi connessi in
+          rete. Nel linguaggio C, il server crea una socket con `socket()`, la associa a un indirizzo IP e una
+          porta tramite `bind()`, e si mette in ascolto con `listen()`. Quando un client si connette
+          utilizzando `connect()`, il server accetta la connessione con `accept()`, creando una nuova socket
+          dedicata alla comunicazione. Entrambi i lati della connessione possono quindi scambiare dati tramite
+          `send()` e `recv()`, fino a chiudere la comunicazione con `close()`. Le socket possono operare con
+          il protocollo TCP, garantendo connessioni affidabili e ordinamento dei dati, o con UDP, che offre
+          comunicazioni rapide ma non garantite. Questo sistema è alla base di molte applicazioni di rete come
+          server web, email e streaming.</p>
+        <h4 id="list-item-4">Esempio di utilizzo:</h4>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                Codice client
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <pre><code>//CLIENT
+#include <stdio.h>       //std in-out
+#include <stdlib.h>      //per utilizzo di certe funzioni:htonl,rand,....
+#include <sys/socket.h>  //funz. accept+bind+listen
+#include <sys/types.h>   //funz. accept
+#include <netinet/in.h>  //definiscono la struttura degli indirizzi 
+#include <string.h>      //funz. stringhe
+#include <errno.h>       //gestioni errori connessione
+#include <ctype.h>       //bind
+#include <unistd.h>     // file header che consente l'accesso alle API dello standard POSIX
+
+#define DIM 50
+#define SERVERPORT 1313
+                                
+int main(int argc,char** argv)
+//creazione di un elemento di tipo sockaddr vedi pagina 162
+struct sockaddr_in servizio;
+//inizializzazione dell'elemento di tipo sockaddr
+ servizio.sin_family=AF_INET;
+ servizio.sin_addr.s_addr=htonl(INADDR_ANY); //  La funzione htonl accetta un numero a 32 bit in ordine di byte host e restituisce un numero a 32 bit nell'ordine dei byte di rete usato nelle reti TCP/IP (la famiglia di indirizzi AF_INET o AF_INET6).
+ servizio.sin_port=htons(SERVERPORT);       //La funzione htons accetta un numero a 16 bit nell'ordine dei byte host e restituisce un numero a 16 bit nell'ordine dei byte di rete usato nelle reti TCP/IP (la famiglia di indirizzi AF_INET o AF_INET6).
+ char str1[DIM];     //Stringa da inviare
+ int socketfd;// identificatore della socket
+//creazione e definizione del Socket di tipo stream tcp pg 163
+ socketfd=socket(AF_INET,SOCK_STREAM,0);
+ //connessione al server pag.173
+ connect(socketfd,(struct sockaddr*)&servizio,sizeof(servizio));    
+ printf("Inserisci la stringa\n");
+ scanf("%s",str1);
+write(socketfd,str1,sizeof(str1));
+ lose(socketfd);
+ return 0;
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                Codice Server
+              </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <pre><code>//SERVER
+#include <stdio.h>       //std in-out
+#include <stdlib.h>      //per utilizzo di certe funzioni:htonl,rand,....
+#include <sys/socket.h>  //funz. accept+bind+listen
+#include <sys/types.h>   //funz. accept
+#include <netinet/in.h>  //definiscono la struttura degli indirizzi 
+#include <string.h>      //funz. stringhe
+#include <errno.h>       //gestioni errori connessione
+#include <ctype.h>       //bind
+#include <unistd.h>     // file header che consente l'accesso alle API dello standard POSIX
+ 
+ #define DIM 50
+#define SERVERPORT 1313
+
+int main()
+{
+    struct sockaddr_in servizio, addr_remoto;// record con i dati del server e del client
+    // definizione dei dati del socket p.161
+    servizio.sin_family=AF_INET;
+servizio.sin_addr.s_addr=htonl(INADDR_ANY);
+servizio.sin_port=htons(SERVERPORT);
+int socketfd, soa, fromlen=sizeof(servizio);
+char str[DIM];
+// impostazione del transport endpoint del server p.163-164
+socketfd=socket(AF_INET,SOCK_STREAM,0);
+// leghiamo l'indirizzo al transport endpoint p. 164
+bind(socketfd,(struct sockaddr*)&servizio,sizeof(servizio));
+// poniamo il server in ascolto delle richieste dei client 
+listen(socketfd,10);// può attendere fino a 10 client
+/ ciclo infinito
+for (; ;)
+    {
+printf("\n\nServer in ascolto...");
+fflush(stdout);
+//il server accetta la connessione pag. 165
+soa=accept(socketfd,(struct sockaddr*)&addr_remoto,&fromlen);
+//legge dal client
+read(soa,str,sizeof(str));
+printf("Stringa ricevuta: %s\n",str);
+close(soa);
+}
+return 0;   
+}
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        </p>
+
+
+        <p>Questo codice crea un server TCP che accetta connessioni e invia un messaggio di benvenuto ai client.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-dark text-light">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+        <span style="color: #007bff;">Informazioni personali e dell'azienda:</span>
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
+        <a href="" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
+        <a href="" class="me-4 text-reset"><i class="fab fa-google"></i></a>
+        <a href="" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
+        <a href="" class="me-4 text-reset"><i class="fab fa-linkedin"></i></a>
+        <a href="" class="me-4 text-reset"><i class="fab fa-github"></i></a>
+      </div>
+    </section>
+
+    <section class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3" style="color: #007bff;"></i>IIS VIOLA
+            MARCHESINI</h6>
+          <p>Davide Soave, 5E</p>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4" style="color: #007bff;">Useful links</h6>
+          <p><a href="#!" class="text-reset">Settings</a></p>
+          <p><a href="#!" class="text-reset">Help</a></p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4" style="color: #007bff;">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Rovigo, RO 45100, IT</p>
+          <p><i class="fas fa-envelope me-3"></i> davide.soave@iisviolamarchesini.edu.it</p>
+          <p><i class="fas fa-phone me-3"></i> +39 334 360 4202</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="https://iisviolamarchesini.edu.it/"
+        style="color: #007bff;">iisviolamarchesini.it</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="script_tpsit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+{
+  "pagina": {
+    "titolo": "PILA ISO-OSI: LIVELLO DI TRASPORTO",
+    "navbar": {
+      "linkPrincipale": {
+        "nome": "HOME",
+        "url": "../index/index.html"
+      },
+      "linkSecondari": [
+        { "nome": "INFORMATICA", "url": "../informatica/informatica.html" },
+        { "nome": "SISTEMI", "url": "../sistemi/sistemi.html" },
+        { "nome": "SOCKET", "url": "../socket/socket.html" },
+        { "nome": "GLOSSARIO", "url": "../glossario/glossario.html" }
+      ]
+    },
+    "contenuti": {
+      "sezioni": [
+        {
+          "id": "list-item-1",
+          "titolo": "Che cos'è il livello di trasporto?",
+          "descrizione": "Il livello di trasporto (livello 4 del modello ISO/OSI) gestisce la comunicazione end-to-end tra dispositivi. Si occupa di garantire che i dati arrivino correttamente, suddividendoli in segmenti e riassemblandoli. Offre controllo degli errori, controllo del flusso e multiplexing per permettere comunicazioni simultanee. Utilizza numeri di porta per distinguere le applicazioni. I principali protocolli sono TCP, che fornisce trasmissione affidabile, e UDP, più veloce ma senza garanzia di consegna. Questo livello è essenziale per il corretto funzionamento delle reti moderne."
+        },
+        {
+          "id": "list-item-2",
+          "titolo": "A che cosa servono?",
+          "descrizione": "Il livello di trasporto svolge funzioni essenziali:",
+          "funzioni": [
+            {
+              "nome": "Controllo degli errori",
+              "descrizione": "Rileva e corregge errori durante la trasmissione dei dati. Se un pacchetto viene perso o danneggiato, ne viene richiesta la ritrasmissione (come avviene con TCP)."
+            },
+            {
+              "nome": "Controllo del flusso",
+              "descrizione": "Regola la velocità di invio dei dati per evitare che il destinatario venga sopraffatto, garantendo una trasmissione efficiente."
+            },
+            {
+              "nome": "Multiplexing delle connessioni",
+              "descrizione": "Permette a più applicazioni di utilizzare simultaneamente la rete, assegnando numeri di porta differenti a ogni connessione."
+            },
+            {
+              "nome": "Gestione delle porte",
+              "descrizione": "Identifica le applicazioni tramite numeri di porta (ad es. 80 per HTTP e 443 per HTTPS), garantendo che i dati arrivino all'applicazione corretta."
+            }
+          ]
+        },
+        {
+          "id": "list-item-3",
+          "titolo": "Come funzionano?",
+          "descrizione": "Una VLAN (Virtual Local Area Network) funziona separando logicamente i dispositivi all'interno di una rete fisica in gruppi distinti. Ogni VLAN agisce come una rete indipendente, consentendo ai dispositivi al suo interno di comunicare tra loro, ma isolandoli dalle altre VLAN, salvo configurazioni specifiche tramite router o switch Layer 3. Gli switch gestiscono le VLAN assegnando le porte a specifici ID VLAN. Quando un dispositivo invia un pacchetto, lo switch lo contrassegna con un tag VLAN (tramite il protocollo IEEE 802.1Q) per identificarne la rete logica. Solo i dispositivi della stessa VLAN possono ricevere questi pacchetti, riducendo il traffico broadcast e migliorando la sicurezza. Router o dispositivi Layer 3 sono necessari per permettere la comunicazione tra VLAN diverse, configurando regole specifiche (routing inter-VLAN). Questo sistema è ideale per gestire reti aziendali complesse e ottimizzare risorse e prestazioni."
+        }
+      ]
+    },
+    "footer": {
+      "informazioniPersonali": "Informazioni personali e dell'azienda:",
+      "linksUtili": [
+        { "nome": "Settings", "url": "#!" },
+        { "nome": "Help", "url": "#!" }
+      ],
+      "contatti": {
+        "indirizzo": "",
+        "email": "",
+        "telefono": ""
+      },
+      "copyright": {
+        "testo": "© 2024 Copyright:",
+        "url": "https://iisviolamarchesini.edu.it/",
+        "nome": "iisviolamarchesini.it"
+      }
+    }
+  }
+}

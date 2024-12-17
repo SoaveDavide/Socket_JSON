@@ -1,0 +1,79 @@
+{
+    "title": "SOCKET",
+    "navbar": {
+        "home": "../index/index.html",
+        "sections": [
+            { "name": "INFORMATICA", "link": "../informatica/informatica.html" },
+            { "name": "SISTEMI", "link": "../sistemi/sistemi.html" },
+            { "name": "SOCKET", "link": "../socket/socket.html" },
+            { "name": "GLOSSARIO", "link": "../glossario/glossario.html" }
+        ]
+    },
+    "sidebar": {
+        "id": "list-example",
+        "class": "list-group sticky-top",
+        "items": [
+            { "text": "Che cosa sono?", "link": "#list-item-1" },
+            { "text": "Tipologie di socket?", "link": "#list-item-2" },
+            { "text": "Come funzionano?", "link": "#list-item-3" },
+            { "text": "Esempio di utilizzo", "link": "#list-item-4" }
+        ]
+    },
+    "content": [
+        {
+            "sectionTitle": "Che cosa sono?",
+            "description": "Una socket è un endpoint di comunicazione utilizzato per inviare e ricevere dati attraverso una rete. Fornisce un'interfaccia standard per comunicare tra dispositivi remoti."
+        },
+        {
+            "sectionTitle": "Tipologie di socket",
+            "types": [
+                {
+                    "type": "Stream (SOCK_STREAM)",
+                    "description": "Utilizzato per la comunicazione orientata alla connessione, come TCP. Garantisce affidabilità e ordinamento dei dati."
+                },
+                {
+                    "type": "Datagram (SOCK_DGRAM)",
+                    "description": "Utilizzato per la comunicazione senza connessione, come UDP. Non garantisce affidabilità o ordine, ma offre velocità."
+                },
+                {
+                    "type": "Raw (SOCK_RAW)",
+                    "description": "Permette l'accesso diretto ai pacchetti di rete, utile per applicazioni di basso livello come strumenti di diagnostica."
+                },
+                {
+                    "type": "Sequenced Packet (SOCK_SEQPACKET)",
+                    "description": "Combina le caratteristiche di stream e datagram, garantendo sequenza e integrità dei pacchetti, ma senza la connessione TCP."
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Come funzionano?",
+            "description": "Una socket è un'interfaccia software che consente la comunicazione tra due processi, sia sullo stesso dispositivo che su dispositivi diversi connessi in rete. Questo sistema è alla base di molte applicazioni di rete come server web, email e streaming."
+        },
+        {
+            "sectionTitle": "Esempio di utilizzo",
+            "examples": [
+                {
+                    "name": "Codice client",
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <sys/socket.h>\n#include <sys/types.h>\n#include <netinet/in.h>\n#include <string.h>\n#include <errno.h>\n#include <unistd.h>\n\n#define DIM 50\n#define SERVERPORT 1313\n\nint main() {\n    struct sockaddr_in servizio;\n    servizio.sin_family = AF_INET;\n    servizio.sin_addr.s_addr = htonl(INADDR_ANY);\n    servizio.sin_port = htons(SERVERPORT);\n\n    char str1[DIM];\n    int socketfd;\n\n    socketfd = socket(AF_INET, SOCK_STREAM, 0);\n    connect(socketfd, (struct sockaddr*)&servizio, sizeof(servizio));\n\n    printf(\"Inserisci la stringa: \\n\");\n    scanf(\"%s\", str1);\n    write(socketfd, str1, sizeof(str1));\n    close(socketfd);\n\n    return 0;\n}"
+                },
+                {
+                    "name": "Codice server",
+                    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <sys/socket.h>\n#include <sys/types.h>\n#include <netinet/in.h>\n#include <string.h>\n#include <errno.h>\n#include <unistd.h>\n\n#define DIM 50\n#define SERVERPORT 1313\n\nint main() {\n    struct sockaddr_in servizio, addr_remoto;\n    servizio.sin_family = AF_INET;\n    servizio.sin_addr.s_addr = htonl(INADDR_ANY);\n    servizio.sin_port = htons(SERVERPORT);\n\n    int socketfd, soa, fromlen = sizeof(servizio);\n    char str[DIM];\n\n    socketfd = socket(AF_INET, SOCK_STREAM, 0);\n    bind(socketfd, (struct sockaddr*)&servizio, sizeof(servizio));\n    listen(socketfd, 10);\n\n    for (;;) {\n        printf(\"\\n\\nServer in ascolto...\\n\");\n        fflush(stdout);\n        soa = accept(socketfd, (struct sockaddr*)&addr_remoto, &fromlen);\n        read(soa, str, sizeof(str));\n        printf(\"Stringa ricevuta: %s\\n\", str);\n        close(soa);\n    }\n\n    return 0;\n}"
+                }
+            ]
+        }
+    ],
+    "footer": {
+        "company": "IIS VIOLA MARCHESINI",
+        "contact": {
+            "address": "Rovigo, RO 45100, IT",
+            "email": "davide.soave@iisviolamarchesini.edu.it",
+            "phone": "+39 334 360 4202"
+        },
+        "links": [
+            { "label": "Settings", "url": "#" },
+            { "label": "Help", "url": "#" }
+        ],
+        "copyright": "© 2024 iisviolamarchesini.it"
+    }
+}
