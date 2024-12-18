@@ -1,0 +1,77 @@
+{
+    "title": "INFORMATICA",
+    "navbar": [
+      {
+        "text": "HOME",
+        "href": "../index/index.html"
+      },
+      {
+        "text": "INFORMATICA",
+        "href": "../informatica/informatica.html"
+      },
+      {
+        "text": "SISTEMI",
+        "href": "../sistemi/sistemi.html"
+      },
+      {
+        "text": "SOCKET",
+        "href": "../socket/socket.html"
+      },
+      {
+        "text": "GLOSSARIO",
+        "href": "../glossario/glossario.html"
+      }
+    ],
+    "content": {
+      "header": "DATABASE",
+      "sections": [
+        {
+          "id": "list-item-1",
+          "title": "Che cos'è un database?",
+          "text": "Un database è un sistema organizzato per raccogliere, gestire e archiviare dati in modo strutturato. Permette di accedere, aggiornare e interrogare informazioni in modo efficiente, spesso utilizzando un linguaggio specifico come SQL. I database possono essere relazionali (strutturati in tabelle) o non relazionali (basati su documenti, grafi, ecc.). Vengono usati in molti ambiti, come siti web, app e analisi di dati."
+        },
+        {
+          "id": "list-item-2",
+          "title": "A che cosa serve?",
+          "text": "Un database serve per organizzare, memorizzare e gestire grandi quantità di dati in modo efficiente e sicuro. Consente di accedere rapidamente alle informazioni, modificarle o analizzarle secondo necessità. Viene utilizzato in diversi contesti: per gestire utenti e contenuti in siti web, monitorare inventari aziendali, elaborare transazioni finanziarie o analizzare dati complessi per supportare decisioni. Grazie ai database, è possibile centralizzare le informazioni, garantire consistenza e facilitarne la condivisione tra diversi sistemi o utenti."
+        },
+        {
+          "id": "list-item-3",
+          "title": "Che cos'è un DBMS",
+          "text": "Un DBMS (Database Management System) è un software che consente di creare, gestire e interagire con un database. Fornisce strumenti per organizzare i dati, eseguire operazioni come l'inserimento, l'aggiornamento, l'eliminazione e la ricerca, e garantisce sicurezza, consistenza e accesso controllato alle informazioni. Esempi comuni di DBMS includono MySQL, PostgreSQL, Oracle Database e MongoDB."
+        },
+        {
+          "id": "list-item-4",
+          "title": "Approccio DBMS vs File System",
+          "table": {
+            "headers": ["Caratteristica", "Approccio DBMS", "Approccio File System"],
+            "rows": [
+              ["Scalabilità", "Altamente scalabile per grandi volumi di dati", "Scalabilità limitata"],
+              ["Backup e ripristino", "Include strumenti integrati per backup e ripristino", "Deve essere implementato manualmente o tramite software aggiuntivi"],
+              ["Integrità dei dati", "Supportata tramite vincoli di integrità e regole aziendali", "Deve essere gestita manualmente"],
+              ["Accesso ai dati", "Accesso tramite query con meccanismi avanzati di ricerca", "L'accesso avviene attraverso il programma che gestisce i file"],
+              ["Sicurezza", "Alto livello di sicurezza con controlli granulari di accesso ai dati", "Limitata, basata sul livello del sistema operativo"],
+              ["Concorrente utilizzo", "Supporta accesso concorrente tramite meccanismi come il locking", "Difficile sincronizzare l'accesso simultaneo ai file"]
+            ]
+          }
+        }
+      ]
+    },
+    "footer": {
+      "company": "IIS VIOLA MARCHESINI",
+      "contact": {
+        "address": "Rovigo, RO 45100, IT",
+        "email": "davide.soave@iisviolamarchesini.edu.it",
+        "phone": "+39 334 360 4202"
+      },
+      "socialLinks": [
+        {"platform": "Facebook", "url": "#"},
+        {"platform": "Twitter", "url": "#"},
+        {"platform": "Google", "url": "#"},
+        {"platform": "Instagram", "url": "#"},
+        {"platform": "LinkedIn", "url": "#"},
+        {"platform": "GitHub", "url": "#"}
+      ]
+    }
+  }
+  

@@ -1,0 +1,165 @@
+body {
+    background-color: #000; /* Sfondo nero */
+    color: #fff; /* Testo bianco */
+    height: calc(100vh - 60px - 50px); /* Imposta l'altezza del body in base all'altezza del viewport meno l'altezza della navbar e del footer */
+    margin: 0; /* Rimuove eventuali margini predefiniti */
+    padding: 0; /* Rimuove eventuali padding predefiniti */
+}
+html, body {
+    height: 100%; /* Imposta l'altezza a 100% */
+    margin: 0; /* Rimuove margini predefiniti */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Imposta la direzione degli elementi del body in colonna */
+}
+
+main {
+    flex: 1; /* Rende il main espandibile per occupare lo spazio rimanente */
+    background-color: #000; /* Sfondo nero */
+    color: #fff; /* Testo bianco */
+}
+
+footer {
+    background-color: #121212; /* Footer scuro */
+    color: #f8f9fa;
+    padding: 20px; /* Padding per il footer */
+}
+h1
+{
+    text-align: center;
+    font-size: 3rem; font-weight: bold; color: #007bff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.list-group-item {
+    background-color: #1c1c1c; /* Sfondo scuro per la lista */
+    color: #fff;
+}
+
+.list-group-item:hover {
+    background-color: #333; /* Sfondo più chiaro al passaggio del mouse */
+}
+
+pre {
+    background-color: #1e1e1e; /* Sfondo per il codice */
+    color: #00ff00; /* Testo verde */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.border-bottom {
+    margin-bottom: 20px;
+}
+
+h4 {
+    border-bottom: 2px solid #007bff; /* Linea blu sotto i titoli */
+    padding-bottom: 5px;
+}
+
+.navbar {
+    background-color: #121212; /* Navbar scura */
+}
+
+.navbar .nav-link, .navbar .dropdown-item, .navbar .btn-outline-success {
+    color: #f8f9fa;
+}
+
+.navbar .dropdown-menu {
+    background-color: #121212; /* Menu dropdown scuro */
+}
+
+.card {
+    background-color: #1e1e1e; /* Sfondo card scuro */
+    border: 1px solid #343a40; /* Bordo card scuro */
+}
+
+.card-title, .card-text {
+    color: #f8f9fa; /* Testo chiaro per le card */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Pulsante blu */
+    border-color: #007bff;
+}
+
+footer {
+    background-color: #121212; /* Footer scuro */
+    color: #f8f9fa;
+}
+
+footer a {
+    color: #007bff; /* Link footer blu */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e; /* Sfondo scuro */
+    color: #f8f9fa; /* Testo chiaro */
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    border: 1px solid #343a40; /* Bordo scuro */
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #007bff; /* Sfondo blu per l'intestazione */
+    color: #fff; /* Testo bianco */
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #2a2a2a; /* Riga pari con sfondo leggermente più chiaro */
+  }
+
+  tbody tr:hover {
+    background-color: #333; /* Sfondo più chiaro al passaggio del mouse */
+  }
+  .accordion-button {
+    background-color: #1e1e1e; /* Sfondo scuro */
+    color: #f8f9fa; /* Testo chiaro */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: none; /* Rimuove i bordi */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #007bff; /* Sfondo blu per lo stato attivo */
+    color: #fff; /* Testo bianco */
+}
+
+.accordion-button:hover {
+    background-color: #333; /* Sfondo più chiaro al passaggio del mouse */
+    color: #f8f9fa;
+}
+
+.accordion-item {
+    background-color: #121212; /* Sfondo scuro per ogni sezione */
+    border: 1px solid #343a40; /* Bordo scuro */
+}
+
+.accordion-body {
+    background-color: #1c1c1c; /* Sfondo per il corpo */
+    color: #f8f9fa; /* Testo chiaro */
+    padding: 15px;
+    border-top: 1px solid #343a40; /* Bordo superiore */
+}
+
+.accordion-button:focus {
+    box-shadow: none; /* Rimuove ombre */
+}
+.navbar .navbar-brand {
+    color: #f8f9fa; /* Text color for navbar links */
+    font-size: 1.25rem; /* Adjust size to match the "HOME" button */
+    padding: 10px 15px; /* Ensure consistent padding for all buttons */
+    text-transform: uppercase; /* Uppercase letters for uniform style */
+}
+
+.navbar .navbar-brand:hover {
+    color: #007bff; /* Hover effect for navbar links */
+    background-color: #333; /* Slight background change on hover */
+}
